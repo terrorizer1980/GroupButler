@@ -2,7 +2,7 @@ FROM golang:alpine as healthchecker-builder
 COPY healthchecker /go/src/healthchecker
 RUN cd bin && go build healthchecker
 
-FROM openresty/openresty:alpine-fat
+FROM openresty/openresty:1.21.4.4-1-alpine-fat
 EXPOSE 80
 WORKDIR /usr/local/openresty/nginx
 
